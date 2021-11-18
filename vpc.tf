@@ -36,7 +36,7 @@ resource "aws_subnet" "todo_public_subnet_2" {
 
 resource "aws_subnet" "todo_private_subnet_1" {
   vpc_id                  = aws_vpc.todo_vpc.id
-  cidr_block              = "10.0.4.0/24"
+  cidr_block              = var.PRIVATE_SUBNET_1_CIDR_BLOCK
   map_public_ip_on_launch = "false"
   availability_zone       = "eu-central-1a"
 
@@ -47,7 +47,7 @@ resource "aws_subnet" "todo_private_subnet_1" {
 
 resource "aws_subnet" "todo_private_subnet_2" {
   vpc_id                  = aws_vpc.todo_vpc.id
-  cidr_block              = "10.0.5.0/24"
+  cidr_block              = var.PRIVATE_SUBNET_2_CIDR_BLOCK
   map_public_ip_on_launch = "false"
   availability_zone       = "eu-central-1b"
 
