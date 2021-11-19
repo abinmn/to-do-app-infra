@@ -6,6 +6,9 @@ resource "aws_eks_node_group" "todo_eks_node_group" {
     aws_subnet.todo_private_subnet_1.id,
     aws_subnet.todo_private_subnet_2.id
   ]
+  instance_types = [
+    "t2.micro"
+  ]
 
   scaling_config {
     desired_size = 2
